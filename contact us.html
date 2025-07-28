@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Pro</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="icon" href="./imgs/logo-removebg-preview.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black overflow-x-hidden">
+<div id="alle"
+    class="hidden absolute top-9 left-1/3 w-100 border-2 border-orange-400 border-solid rounded-2xl bg-white text-center text-orange-500 p-10">
+    <h3 class="text-3xl">Thanks for submiting !</h3>
+    <br />
+    <p class="text-lg">We will contact you !</p>
+</div>
+<div class="loader fixed top-0 left-0 w-full h-full flex justify-center items-center"></div>
+<!-- navbar -->
+<nav class="grid grid-cols-3 grid-rows-1">
+    <div class="flex items-center h-20 mt-3 w-40">
+        <img src="./imgs/logo-removebg-preview.png" alt="" class="w-13" />
+        <p class="text-white">fitness pro</p>
+    </div>
+    <ul class="decoration-0 flex justify-evenly items-center text-gray-500 w-100 h-20 mt-3">
+        <li
+            class="text-md border-2 rounded-3xl px-3.5 border-black duration-300 hover:border-white hover:text-white">
+            <a href="./index.html">Home</a>
+        </li>
+        <li
+            class="text-md border-2 rounded-3xl px-3.5 border-black duration-300 hover:border-white hover:text-white">
+            <a href="./about.html">About</a>
+        </li>
+        <li
+            class="text-md border-2 rounded-3xl px-3.5 border-orange-500 text-white duration-300 hover:border-white hover:text-white">
+            <a href="./contact us.html">Contact</a>
+        </li>
+    </ul>
+    <div class="flex items-center h-20 w-25 mt-3 justify-end absolute right-10">
+        <button
+            class="text-white rounded-2xl border-2 border-amber-600 w-20 duration-300 hover:bg-amber-600 hover:border-amber-50 animate-bounce">
+            <a href="">Order</a>
+        </button>
+    </div>
+</nav>   
+<!-- contact form -->
+<div class="flex justify-center">
+    <div class="flex justify-evenly items-center border-2 rounded-4xl p-10 w-250">
+        <form action="" class="text-white w-50" id="form">
+            <label class="duration-300 outline-none block mt-5" for="">Full name</label>
+            <input
+                class="duration-300 pl-1 outline-none block mt-5 bg-amber-0 border-2 border-white rounded-lg w-70"
+                type="text" />
+            <label class="duration-300 outline-none block mt-5" for="">E-mail</label>
+            <input
+                class="duration-300 pl-1 outline-none block mt-5 bg-amber-0 border-2 border-white rounded-lg w-70"
+                type="text" />
+            <label class="duration-300 outline-none block mt-5" for="">Password</label>
+            <input
+                class="duration-300 pl-1 outline-none block mt-5 bg-amber-0 border-2 border-white rounded-lg w-70"
+                type="text" />
+            <label class="duration-300 outline-none block mt-5" for="">Training Intenesty</label>
+            <input class="duration-300 outline-none block mt-5 appearance-none rounded-4xl bg-white w-50 h-2 slider"
+                type="range" />
+            <button id="sub" class="duration-300 outline-none block mt-5 bg-amber-600 border-2 hover:border-white hover:bg-black border-transparent rounded-lg w-40 h-10">
+    submit
+</button>
+</form>
+<div class="ml-50 items-center w-full">
+    <img src="./imgs/light bg.png" alt="" class="w-200" />
+</div>
+</div>
+</div>
+<div class="w-full h-5 text-gray-400 flex justify-center mt-10 mb-10">
+    <hr class="w-250" />
+</div>
+<footer class="h-20 text-center text-white">
+    <h1>&copy Koreem ahmed</h1>
+    <h1>
+        This is made by my mind and don't have any relation to anyy website in
+        the real life
+    </h1>
+    <h1>thank you for seeing my website.</h1>
+</footer>
+<script>
+    window.addEventListener("load", () => {
+        const loader = document
+            .querySelector(".loader")
+            .classList.add("loader-hidden");
+        loader.addEventListener("transitionend", () => {
+            document.body.removeChild(document.querySelector(".loader"));
+        });
+    });
+
+    document.getElementById("sub").addEventListener("click", function (form) {
+        form.preventDefault();
+        setTimeout(function () {
+            document.getElementById("alle").classList.remove("hidden");
+        }, 1500);
+    });
+
+    setTimeout(function () {
+        document.getElementById("alle").classList.add("hidden")
+    }, 5500);
+</script>
+</body>
+</html>
